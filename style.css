@@ -1,0 +1,240 @@
+/* style.css - 트렌디 힙스터 나노바나나 버전 */
+:root {
+    --primary: #8b5cf6;       /* 트렌디한 네온 바이올렛 */
+    --primary-dark: #6d28d9;
+    --secondary: #06b6d4;     /* 청량한 사이언 블루 */
+    --accent: #facc15;        /* 진한 바나나 옐로우 */
+    --bg-page: #0f172a;       /* 힙한 다크 모드 베이스 */
+    --bg-card: #1e293b;       /* 세련된 슬레이트 카디널 */
+    --text-main: #f8fafc;     /* 화사한 화이트 텍스트 */
+    --text-muted: #94a3b8;    /* 부드러운 그레이 */
+    --border-color: #334155;
+    --tag-bg: rgba(139, 92, 246, 0.15);
+    --tag-text: #c084fc;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top left, #2e1065 0%, #0f172a 100%);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* 힙한 네온 아우라가 뿜어져 나오는 컨테이너 */
+.container {
+    background: var(--bg-card);
+    width: 100%;
+    max-width: 460px;
+    min-height: 660px;
+    border-radius: 32px;
+    box-shadow: 0 0 50px rgba(139, 92, 246, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    padding: 45px 32px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+/* 나노바나나 감성의 시그니처 로고 */
+.logo {
+    font-size: 1.6rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, var(--accent), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+/* 3D 통통 튀는 화면 전환 효과 */
+.page {
+    display: none;
+    opacity: 0;
+    transform: scale(0.95) translateY(15px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.page.active {
+    display: flex;
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+h2 {
+    font-size: 1.9rem;
+    font-weight: 800;
+    line-height: 1.35;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p.description {
+    color: var(--text-muted);
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* 사이버펑크 느낌의 네온 일렉트릭 프로그레스 바 */
+.progress-container {
+    width: 100%;
+    background-color: #0f172a;
+    height: 12px;
+    border-radius: 99px;
+    margin-bottom: 40px;
+    padding: 2px;
+    border: 1px solid #334155;
+}
+
+.progress-bar {
+    width: 0%;
+    background: linear-gradient(90deg, var(--accent), var(--primary));
+    height: 100%;
+    border-radius: 99px;
+    box-shadow: 0 0 12px var(--primary);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.question-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    text-align: left;
+    min-height: 80px;
+    color: #f1f5f9;
+}
+
+/* 영롱한 그라데이션 메인 버튼 */
+button {
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+}
+
+.btn-start {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 22px;
+    box-shadow: 0 8px 24px rgba(139, 92, 246, 0.3);
+}
+
+.btn-start:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(139, 92, 246, 0.5);
+}
+
+/* 누를 맛 나는 입체적인 옵션 카드 버튼 */
+.btn-option {
+    background-color: #0f172a;
+    color: #cbd5e1;
+    padding: 22px;
+    border: 1.5px solid var(--border-color);
+    text-align: left;
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 0.98rem;
+}
+
+.btn-option:hover {
+    background: rgba(139, 92, 246, 0.1);
+    border-color: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(139, 92, 246, 0.15);
+}
+
+.btn-restart {
+    background: linear-gradient(135deg, #334155 0%, #1e293b 100%);
+    color: #f1f5f9;
+    padding: 18px;
+    margin-top: 24px;
+    border: 1px solid #475569;
+}
+
+.btn-restart:hover {
+    background: #475569;
+    transform: translateY(-2px);
+}
+
+/* 힙한 연구소 감성의 미래형 로딩 링 */
+.spinner {
+    width: 55px;
+    height: 55px;
+    border: 4px solid rgba(6, 182, 212, 0.1);
+    border-top-color: var(--secondary);
+    border-radius: 50%;
+    animation: spin 0.8s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+    margin: 0 auto 24px auto;
+    filter: drop-shadow(0 0 8px var(--secondary));
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* 프리미엄 결과지 스타일 레이아웃 */
+.result-header {
+    font-size: 0.9rem;
+    color: var(--accent);
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+}
+
+.result-title {
+    font-size: 2rem;
+    color: #ffffff;
+    font-weight: 900;
+    margin-bottom: 24px;
+}
+
+/* 고급 사이버 테크 카드 내부 스타일 */
+.result-box {
+    background-color: #0f172a;
+    border-radius: 20px;
+    padding: 26px;
+    margin-bottom: 20px;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+.result-box h4 {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 14px;
+    font-weight: 800;
+}
+
+.tag-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
