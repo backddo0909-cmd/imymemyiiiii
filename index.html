@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOBTI : 내 성격에 딱 맞는 취업처 찾기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="logo">JOBTI</div>
+
+    <div id="start-page" class="page active">
+        <div>
+            <h2>내 성격에 딱 맞는<br>취업처 찾기 테스트</h2>
+            <p class="description">단 3개의 핵심 질문을 통하여 당신의 천직과 가장 시너지가 날 수 있는 직장 문화를 분석해 드립니다.</p>
+        </div>
+        <button class="btn-start" onclick="startTest()">테스트 시작하기</button>
+    </div>
+
+    <div id="question-page" class="page">
+        <div class="progress-container">
+            <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        <div id="question-text" class="question-title">질문 로딩중...</div>
+        <div id="options-container">
+            </div>
+    </div>
+
+    <div id="loading-page" class="page">
+        <div class="spinner"></div>
+        <h3>당신의 성향 분석 중...</h3>
+        <p class="description" style="margin-top: 8px;">맞춤형 추천 직무와 기업 문화를 도출하고 있습니다.</p>
+    </div>
+
+    <div id="result-page" class="page">
+        <div>
+            <div class="result-header">당신의 직장인 성향 유형은?</div>
+            <div id="result-type" class="result-title">유형 이름</div>
+            <p id="result-desc" class="description" style="margin-bottom: 24px; font-size: 0.95rem;">유형 설명</p>
+            
+            <div class="result-box">
+                <h4>🎯 추천 직무</h4>
+                <div id="result-jobs" class="tag-container"></div>
+            </div>
+            
+            <div class="result-box">
+                <h4>🏢 추천 기업 문화</h4>
+                <div id="result-culture" class="tag-container"></div>
+            </div>
+        </div>
+
+        <button class="btn-restart" onclick="restartTest()">다시 하기</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
